@@ -6,11 +6,20 @@ namespace CustomFormComponent.RequireableCheckBoxComponent
 
     public class RequireableCheckBoxProperties : FormComponentProperties<bool>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckBoxProperties"/> class.
+        /// </summary>
+        /// <remarks>
+        /// The constructor initializes the base class to data type <see cref="FieldDataType.Boolean"/>.
+        /// </remarks>
         public RequireableCheckBoxProperties() : base(FieldDataType.Boolean)
         {
         }
 
 
+        /// <summary>
+        /// Gets or sets the default value of the form component and underlying field.
+        /// </summary>
         [DefaultValueEditingComponent(CheckBoxComponent.IDENTIFIER)]
         public override bool DefaultValue
         {
@@ -28,8 +37,5 @@ namespace CustomFormComponent.RequireableCheckBoxComponent
             get;
             set;
         }
-
-
-        
     }
 }

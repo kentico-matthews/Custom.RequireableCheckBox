@@ -8,32 +8,49 @@ using CustomFormComponent.RequireableCheckBoxComponent;
 
 namespace CustomFormComponent.RequireableCheckBoxComponent
 {
+    /// <summary>
+    /// Represents a checkbox form component that can be marked as required.
+    /// </summary>
     public class RequireableCheckBoxComponent : FormComponent<RequireableCheckBoxProperties,bool>
     {
+        /// <summary>
+        /// Represents the <see cref="RequireableCheckBoxComponent"/> identifier.
+        /// </summary>
         public const string IDENTIFIER = "RequireableCheckboxComponent";
 
 
-        // Specifies the property is used for data binding by the form builder
+        /// <summary>
+        /// Represents the input value in the resulting HTML.
+        /// </summary>
         [BindableProperty]
-        // The value of the checkbox
         public bool Value { get; set; }
 
 
-        // Gets the value of the form field instance passed from a view where the instance is rendered
+        /// <summary>
+        /// Gets name of the <see cref="Value"/> property.
+        /// </summary>
+        public override string LabelForPropertyName => nameof(Value);
+
+
+        /// <summary>
+        /// Gets the <see cref="Value"/>.
+        /// </summary>
         public override bool GetValue()
         {
             return Value;
         }
 
 
-        // Sets the default value of the form field instance
+        /// <summary>
+        /// Sets the <see cref="Value"/>.
+        /// </summary>
         public override void SetValue(bool value)
         {
             Value = value;
         }
 
         /// <summary>
-        /// Performs validation of the reCAPTCHA component.
+        /// Performs validation of the requireable check box component.
         /// </summary>
         /// <param name="validationContext">The validation context.</param>
         /// <returns>A collection that holds failed-validation information.</returns>
@@ -49,6 +66,5 @@ namespace CustomFormComponent.RequireableCheckBoxComponent
 
             return errors;
         }
-
     }
 }
